@@ -2,9 +2,9 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter as Router } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppRoutes from "@/AppRoutes";
-import { Router } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
