@@ -4,10 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 import ProductsPage from "@/pages/ProductsPage";
-import CategoriesPage from "@/pages/CategoryPage";
+import CategoriesPage from "@/pages/CategoriesPage";
 import { useState } from "react";
-
-const drawerWidth = 240;
 
 const AppRoutes = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,22 +15,30 @@ const AppRoutes = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <Header handleDrawerToggle={handleDrawerToggle} />
-      <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          mt: "64px",
-        }}
-      >
-        <Routes>
-          <Route path="/" element={<ProductsPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
-        </Routes>
+      
+      {/* Spacer to push content below fixed AppBar */}
+      <Box sx={(theme) => theme.mixins.toolbar} />
+
+      <Box sx={{ display: 'flex', flexGrow: 1, overflow: 'hidden' }}>
+        <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
+        
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            overflow: 'auto',
+            p: 3,
+            width: { md: `calc(100% - 240px)` },
+            ml: { md: '240px' },
+          }}
+        >
+          <Routes>
+            <Route path="/" element={<ProductsPage />} />
+            <Route path="/categories" element={<CategoriesPage />} />
+          </Routes>
+        </Box>
       </Box>
     </Box>
   );
