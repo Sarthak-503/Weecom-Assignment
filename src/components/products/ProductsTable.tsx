@@ -81,14 +81,14 @@ const ProductTable: React.FC<ProductTableProps> = ({
   return (
     <>
       <Paper sx={{ width: "100%", overflow: "hidden" ,my:2}}>
-        <Box sx={{ p: 2, display: "flex", gap: 2, flexWrap: "wrap" }}>
+        <Box sx={{ p: 2, display: "flex", flexDirection:'row', gap: 2, flexWrap: "wrap" }}>
           <TextField
             placeholder="Search products..."
             value={searchQuery}
             onChange={handleSearchChange}
-            sx={{ minWidth: 200 }}
+            sx={{ maxWidth: 130 }}
           />
-          <FormControl sx={{ minWidth: 200 }}>
+          <FormControl sx={{ minWidth: 130 }}>
             <InputLabel>Category</InputLabel>
             <Select 
               value={selectedCategory}

@@ -92,7 +92,7 @@ const ProductsPage: React.FC = () => {
           startIcon={<AddIcon />}
           onClick={handleAddProduct}
         >
-          Add Product
+          Add
         </Button>
       </Box>
 

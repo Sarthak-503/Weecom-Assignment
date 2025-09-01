@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ handleDrawerToggle }) => {
           </IconButton>
           
           <Typography variant="h6" noWrap component="div">
-            Product Dashboard
+            Dashboard
           </Typography>
         </Box>
 
