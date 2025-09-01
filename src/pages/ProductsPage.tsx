@@ -87,6 +87,7 @@ const ProductsPage: React.FC = () => {
           Products
         </Typography>
         <Button
+          size='small'
           variant="contained"
           startIcon={<AddIcon />}
           onClick={handleAddProduct}

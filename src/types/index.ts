@@ -67,3 +67,20 @@ export interface ProductFormData {
 
 export type ProductSortField = 'title' | 'price' | 'category' | 'stock';
 export type SortOrder = 'asc' | 'desc';
+
+
+export interface ProductTableProps {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+  loading: boolean;
+  error: string | null;
+  onEdit: (product: Product) => void;
+  onDelete: (id: number) => void;
+  onPageChange: (newSkip: number) => void;
+  onSearch: (query: string) => void;
+  onCategoryFilter: (category: string) => void;
+  categories: string[];
+  selectedCategory: string;
+}

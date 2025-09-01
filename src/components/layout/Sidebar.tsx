@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, handleDrawerToggle }) => 
     <div>
       <List>
         {menuItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
+          <ListItem key={item.text} >
             <ListItemButton
               selected={location.pathname === item.path}
               onClick={() => {
@@ -48,11 +48,11 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, handleDrawerToggle }) => 
                 }
               }}
               sx={{
+                borderRadius:5,
                 '&.Mui-selected': {
-                  backgroundColor: theme.palette.primary.main,
                   color: theme.palette.primary.contrastText,
                   '&:hover': {
-                    backgroundColor: theme.palette.primary.dark,
+                    backgroundColor:'rgb(24 199 71 / 8%)',
                   },
                   '& .MuiListItemIcon-root': {
                     color: theme.palette.primary.contrastText,
@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, handleDrawerToggle }) => 
                 },
               }}
             >
-              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemIcon sx={{size:'small'}}>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>

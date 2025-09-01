@@ -1,10 +1,11 @@
 // src/App.tsx
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppRoutes from "@/AppRoutes";
+import { createTheme } from "./theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -15,19 +16,8 @@ const queryClient = new QueryClient({
   },
 });
 
-const theme = createTheme({
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#1976d2",
-    },
-    secondary: {
-      main: "#dc004e",
-    },
-  },
-});
-
 function App() {
+  const theme = createTheme();
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
