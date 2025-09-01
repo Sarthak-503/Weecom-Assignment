@@ -1,69 +1,114 @@
-# React + TypeScript + Vite
+# 🛍️ Product Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modular and scalable **React + TypeScript** application built with **Material-UI**.  
+The project demonstrates a modern architecture using **React Query**, **custom hooks**, and **component-driven design** for managing products and categories via the [DummyJSON API](https://dummyjson.com).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Approach & Architecture
 
-## Expanding the ESLint configuration
+### 🔹 Component Architecture
+- **Presentation Components**: Focus on UI rendering  
+  _Examples: `ProductTable`, `CategoryCards`_
+- **Container Components**: Handle business logic & data  
+  _Examples: `ProductsPage`, `CategoriesPage`_
+- **Custom Hooks**: Abstract data fetching & state management  
+  _Examples: `useProducts`, `useCategories`_
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🗂️ State Management
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React Query** → For server state management (caching, background updates, pagination)  
+- **React State** → For local UI interactions & form management  
+- **URL State** → Query parameters and routing for filtering & navigation  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔄 Data Flow
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **API Layer** → Centralized API utilities with typed responses  
+2. **Custom Hooks** → React Query hooks for fetching & mutations  
+3. **Components** → Consume hooks and render UI  
+4. **User Actions** → Trigger mutations → Auto refetch & UI update  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## ⚡ Performance Optimizations
+
+- **Pagination** → Efficient product loading with `limit/skip` params  
+- **Caching** → React Query prevents redundant requests  
+- **Lazy Loading** → Components/data only loaded when needed  
+- **Memoization** → `React.memo` & `useMemo` for expensive computations  
+
+---
+
+## 📱 Responsive Design
+
+- **MUI Grid System** → Adaptive layouts for all screen sizes  
+- **Mobile-First** → Optimized for mobile with progressive enhancement  
+- **Touch-Friendly** → Larger touch targets & smooth interactions  
+
+---
+
+## 🛡️ Error Handling
+
+- **React Error Boundaries** → Graceful component error recovery  
+- **API Error Handling** → Structured responses in API layer  
+- **Loading States** → Skeletons & spinners for improved UX  
+
+---
+
+## 📊 API Integration
+
+Using [DummyJSON API](https://dummyjson.com):
+
+- `GET /products` → Fetch products (supports pagination & filtering)  
+- `GET /products/{id}` → Fetch product details  
+- `POST /products/add` → Create a product  
+- `PUT /products/{id}` → Update a product  
+- `DELETE /products/{id}` → Delete a product  
+- `GET /categories` → Fetch all categories  
+
+---
+
+## 🎨 Theming
+
+- **Material-UI Theming** with:
+  - Custom color palette  
+  - Responsive typography  
+  - Consistent spacing (theme units)  
+  - Ready for **Dark/Light mode**  
+
+---
+
+## 📦 Tech Stack
+
+- **React + TypeScript**
+- **Material-UI (MUI)**
+- **React Query**
+- **React Router**
+- **DummyJSON API**
+
+---
+
+## 🖼️ Screenshots
+
+_(Add screenshots or GIFs of your app here)_
+
+---
+
+## 🏗️ Setup & Installation
+
+```bash
+# Clone repository
+git clone https://github.com/your-repo/product-dashboard.git
+
+# Navigate into project
+cd product-dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
