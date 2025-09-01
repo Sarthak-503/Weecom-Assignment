@@ -3,9 +3,11 @@ import { Box } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
-import ProductsPage from "@/pages/ProductsPage";
-import CategoriesPage from "@/pages/CategoriesPage";
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
+
+// Lazy load pages
+const ProductsPage = lazy(() => import("@/pages/ProductsPage"));
+const CategoriesPage = lazy(() => import("@/pages/CategoriesPage"));
 
 const AppRoutes = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,10 +36,12 @@ const AppRoutes = () => {
             ml: { md: '240px' },
           }}
         >
-          <Routes>
-            <Route path="/" element={<ProductsPage />} />
-            <Route path="/categories" element={<CategoriesPage />} />
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<ProductsPage />} />
+              <Route path="/categories" element={<CategoriesPage />} />
+            </Routes>
+          </Suspense>
         </Box>
       </Box>
     </Box>
