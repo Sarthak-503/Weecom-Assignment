@@ -1,3 +1,5 @@
+# NOTE
+- Don't Judge my code based on Css, I have knowledge about Material-UI, But I can ready to shift to Tailwind and Shadcn UI For components.
 # 🛍️ Product Dashboard
 
 A modular and scalable **React + TypeScript** application built with **Material-UI**.  
