@@ -173,7 +173,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
 
       {/* Summary Metrics */}
       <Grid container spacing={2} sx={{ mb: 4 }}>
-        <Grid size={{ xs: 6, md: 2.4 }}>
+        <Grid size={{ xs: 12, md: 2.4 }}>
           <Card elevation={2}>
             <CardContent sx={{ textAlign: "center" }}>
               <Typography variant="h4" color="primary">
@@ -185,7 +185,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
             </CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 6, md: 2.4 }}>
+        <Grid size={{ xs: 12, md: 2.4 }}>
           <Card elevation={2}>
             <CardContent sx={{ textAlign: "center" }}>
               <Typography variant="h4" color="primary">
@@ -197,7 +197,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
             </CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 6, md: 2.4 }}>
+        <Grid size={{ xs: 12, md: 2.4 }}>
           <Card elevation={2}>
             <CardContent sx={{ textAlign: "center" }}>
               <Typography variant="h4" color="primary">
@@ -209,7 +209,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
             </CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 6, md: 2.4 }}>
+        <Grid size={{ xs: 12, md: 2.4 }}>
           <Card elevation={2}>
             <CardContent sx={{ textAlign: "center" }}>
               <Typography variant="h4" color="primary">
@@ -221,7 +221,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
             </CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: 6, md: 2.4 }}>
+        <Grid size={{ xs: 12, md: 2.4 }}>
           <Card elevation={2}>
             <CardContent sx={{ textAlign: "center" }}>
               <Typography variant="h4" color="primary">
@@ -238,7 +238,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
       {/* Charts */}
       <Grid container spacing={3}>
         {/* Products by Category */}
-        <Grid size={{ xs: 6, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Paper elevation={2} sx={{ p: 2, height: 300 }}>
             <Typography variant="h6" gutterBottom>
               Products by Category
@@ -259,7 +259,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
         </Grid>
 
         {/* Stock Status */}
-        <Grid size={{ xs: 6, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Paper elevation={2} sx={{ p: 2, height: 300 }}>
             <Typography variant="h6" gutterBottom>
               Stock Status
@@ -292,7 +292,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
         </Grid>
 
         {/* Price Distribution */}
-        <Grid size={{ xs: 6, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Paper elevation={2} sx={{ p: 2, height: 300 }}>
             <Typography variant="h6" gutterBottom>
               Price Distribution
@@ -313,7 +313,7 @@ const ProductInsights: React.FC<ProductInsightsProps> = ({
         </Grid>
 
         {/* Rating Distribution */}
-        <Grid size={{ xs: 6, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Paper elevation={2} sx={{ p: 2, height: 300 }}>
             <Typography variant="h6" gutterBottom>
               Rating Distribution
